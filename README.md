@@ -4,7 +4,7 @@ The Mad Lib PDF Generator is a Full Stack RESTFul Node, Express, React Applicati
 
 ## Getting Started
 
-npm start && cd client & npm start
+npm start && cd client && npm start
 
 
 ### Prerequisites
