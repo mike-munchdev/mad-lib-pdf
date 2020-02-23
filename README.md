@@ -1,6 +1,6 @@
 # Mad Libs PDF Generator Example
 
-The Mad Lib PDF Generator is a Full Stack RESTFul Node, Express, React Application whose purpose is to demonstrate how you can generate PDFs from using a PDF form
+The Mad Lib PDF Generator is a Full Stack RESTFul Node, Express, React Application whose purpose is to demonstrate how you can generate PDFs from a PDF form.
 
 ## Getting Started
 

@@ -51,6 +51,5 @@ MadLibRow.propTypes = {
   input2Placeholder: PropTypes.string,
   input1Value: PropTypes.string,
   input2Value: PropTypes.string,
-
   handleChange: PropTypes.func
 };
