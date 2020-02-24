@@ -317,7 +317,7 @@ const App = () => {
                 className="btn btn-secondary btn-block"
                 onClick={() => fillWithDefaults()}
               >
-                Try Defaults
+                Use Defaults
               </button>
             </div>
             <div className="col-md-4">
