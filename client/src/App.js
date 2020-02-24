@@ -6,73 +6,82 @@ import MadLibRow from './components/MadLibRow';
 import Errors from './components/Errors';
 
 let FileSaver;
+const initialState = {
+  answer1: '',
+  answer2: '',
+  answer3: '',
+  answer4: '',
+  answer5: '',
+  answer6: '',
+  answer7: '',
+  answer8: '',
+  answer9: '',
+  answer10: '',
+  answer11: '',
+  answer12: '',
+  answer13: '',
+  answer14: '',
+  answer15: '',
+  answer16: '',
+  answer17: '',
+  answer18: '',
+  answer19: '',
+  answer20: '',
+  answer21: '',
+  answer22: '',
+  answer23: '',
+  answer24: '',
+  answer25: '',
+  answer26: ''
+};
 
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState(null);
-  const [madLibAnswers, setMadLibAnswers] = useState({
-    answer1: 'dog',
-    answer2: 'hamburger',
-    answer3: 'friend',
-    answer4: 'cat',
-    answer5: 'play',
-    answer6: 'skip',
-    answer7: 'jump',
-    answer8: 'hop',
-    answer9: 'truck',
-    answer10: 'home',
-    answer11: 'treasure',
-    answer12: 'chest',
-    answer13: 'London',
-    answer14: 'give',
-    answer15: 'chicken',
-    answer16: 'monopoly',
-    answer17: 'trap',
-    answer18: 'crayon',
-    answer19: 'computer',
-    answer20: 'blankets',
-    answer21: 'television',
-    answer22: 'flying',
-    answer23: 'adore',
-    answer24: 'umpires',
-    answer25: 'strike',
-    answer26: 'razor'
-  });
-  // if you want to start from scratch just comment out the the lines above and uncomment out the lines below
-  // const [madLibAnswers, setMadLibAnswers] = useState({
-  //   answer1: '',
-  //   answer2: '',
-  //   answer3: '',
-  //   answer4: '',
-  //   answer5: '',
-  //   answer6: '',
-  //   answer7: '',
-  //   answer8: '',
-  //   answer9: '',
-  //   answer10: '',
-  //   answer11: '',
-  //   answer12: '',
-  //   answer13: '',
-  //   answer14: '',
-  //   answer15: '',
-  //   answer16: '',
-  //   answer17: '',
-  //   answer18: '',
-  //   answer19: '',
-  //   answer20: '',
-  //   answer21: '',
-  //   answer22: '',
-  //   answer23: '',
-  //   answer24: '',
-  //   answer25: '',
-  //   answer26: ''
-  // });
+  // const [madLibAnswers, setMadLibAnswers] = useState();
+
+  const [madLibAnswers, setMadLibAnswers] = useState(initialState);
 
   const handleTextChange = e => {
     const target = e.target;
     setMadLibAnswers({
       ...madLibAnswers,
       [target.name]: target.value
+    });
+  };
+
+  const clearForm = () => {
+    setMadLibAnswers(initialState);
+  };
+
+  const fillWithDefaults = () => {
+    setMadLibAnswers({
+      answer1: 'dog',
+      answer2: 'hamburger',
+      answer3: 'friend',
+      answer4: 'cat',
+      answer5: 'play',
+      answer6: 'skip',
+      answer7: 'jump',
+      answer8: 'hop',
+      answer9: 'truck',
+      answer10: 'home',
+      answer11: 'treasure',
+      answer12: 'chest',
+      answer13: 'London',
+      answer14: 'give',
+      answer15: 'chicken',
+      answer16: 'monopoly',
+      answer17: 'trap',
+      answer18: 'crayon',
+      answer19: 'computer',
+      answer20: 'blankets',
+      answer21: 'television',
+      answer22: 'flying',
+      answer23: 'adore',
+      answer24: 'umpires',
+      answer25: 'strike',
+      answer26: 'razor'
     });
   };
 
@@ -294,12 +303,32 @@ const App = () => {
           {/* end row 13 */}
           <Errors errors={errors} />
           <hr className="mb-4" />
-          <button
-            className="btn btn-primary btn-lg btn-block"
-            onClick={() => generateMadLib()}
-          >
-            Generate Mad Lib
-          </button>
+          <div className="row">
+            <div className="col-md-4">
+              <button
+                className="btn btn-primary btn-block"
+                onClick={() => generateMadLib()}
+              >
+                Generate Mad Lib
+              </button>
+            </div>
+            <div className="col-md-4">
+              <button
+                className="btn btn-secondary btn-block"
+                onClick={() => fillWithDefaults()}
+              >
+                Use Defaults
+              </button>
+            </div>
+            <div className="col-md-4">
+              <button
+                className="btn btn-danger btn-block"
+                onClick={() => clearForm()}
+              >
+                Clear
+              </button>
+            </div>
+          </div>
         </>
       )}
     </div>
