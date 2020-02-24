@@ -89,8 +89,3 @@ typings/
 
 # VS Code IDE
 /.vscode
-
-*.docx
-/server/templates/*
-server/seed/sql/salesforce/07 - Task.sql
-fakes.json
